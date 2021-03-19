@@ -16,6 +16,10 @@ app.get('/data', (req, res) => {
   res.send(data);
 });
 
+app.get('/config', (req, res) => {
+  res.send(config);
+});
+
 app.listen(config.port, (req, res) =>{
   console.log('Listening on: %s', config.port);
   console.log('Started in %s', config.is_debug  ? 'DEBUG' : 'RELEASE');
