@@ -17,7 +17,7 @@ const debug = {
 };
 
 const release = {
-  port: Int(process.env.PORT || 5000)
+  port: process.env.PORT || 5000
 };
 
 module.exports = {...(DEBUG_MODE ? debug : release), ...constants};
