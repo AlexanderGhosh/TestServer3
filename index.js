@@ -1,8 +1,7 @@
 const express = require('express');
-const data = require('./data.json');
 const config = require('./src/config');
 const {getIP} = require('./src/utils');
-const {getOne} = require('./src/database/querys');
+const {getOne, getAll} = require('./src/database/querys');
 const {createConnection} = require('./src/database/mongo');
 
 const app = express();
@@ -14,7 +13,7 @@ app.get('/', (req, res) => {
   res.send("First Page");
 });
 
-app.get('/data', (req, res) => {
+app.get('/data', async (req, res) => {
   res.send(await getAll());
 });
 
